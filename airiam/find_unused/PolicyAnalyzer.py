@@ -1,12 +1,12 @@
 import json
 import logging
 import re
-import requests
+from security import safe_requests
 
 ACTION_TABLE_URL = 'https://raw.githubusercontent.com/salesforce/policy_sentry/master/policy_sentry/shared/data/iam-definition.json'
 ACTIONS_NOT_COVERED_BY_ACCESS_ADVISOR = ['iam:PassRole', 's3:GetObject', 's3:PutObject']
 
-action_map = requests.get(ACTION_TABLE_URL, timeout=60).json(timeout=60)
+action_map = safe_requests.get(ACTION_TABLE_URL, timeout=60).json(timeout=60)
 
 
 class PolicyAnalyzer:

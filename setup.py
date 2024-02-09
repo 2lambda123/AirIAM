@@ -37,7 +37,8 @@ setup(
         "colorama==0.4.3",
         "python-terraform==0.10.1",
         "requests>=2.22.0",
-        "termcolor==1.1.0"
+        "termcolor==1.1.0",
+        "security~=1.2.0",
     ],
     license="Apache License 2.0",
     name="airiam",
